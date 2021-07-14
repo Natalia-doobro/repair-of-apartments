@@ -1,0 +1,71 @@
+/* roboto-regular - latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-regular.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-regular.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-regular.svg#Roboto')
+      format('svg'); /* Legacy iOS */
+}
+/* roboto-700 - latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-700.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-700.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-700.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-700.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('../fonts/roboto-v27-latin_cyrillic-ext_cyrillic/roboto-v27-latin_cyrillic-ext_cyrillic-700.svg#Roboto')
+      format('svg'); /* Legacy iOS */
+}
+/*Палитра
+цвет теекста заголовка - #000000;
+цвет теекста подзаголовков - #000000;
+цвет теекста - #000000; #FFFFFF; #870126;
+текст силки при наведении - #870126;
+текст в подвале - #000000;
+акцент - #870126;
+цвет кнопки - #ffffff; #870126;
+фон иконки - #870126; #E2AA78;
+цвет текста на кнопке - #ffffff;  #870126
+ховер книпки - #E2AA78; 
+*/
+:root {
+  --body-color: #ffffff;
+  --text-color: #000000;
+  --title-color: #000000;
+  --hover-color: #870126;
+  --section-color: rgba(226, 170, 120, 0.27);
+  --dark-bg-color: #5c001a;
+  --dark-bg-text-color: #ffffff;
+  --button-color: #870126;
+  --active-button-color: #e2aa78;
+  --icon-color: #ffffff;
+  --button-close-color: #000000;
+  --active-color: #e2aa78;
+  --animation-duration: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,100 @@
+.client {
+  background-color: var(--section-color);
+  @media screen and (max-width: $tablet) {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  @media screen and (min-width: $tablet) {
+    padding-top: 67px;
+    padding-bottom: 75px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 85px;
+    padding-bottom: 90px;
+  }
+}
+.title--margin {
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 50px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 71px;
+  }
+}
+.clients {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  @media screen and (max-width: $tablet-max) {
+    &__item {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-wrap: wrap;
+    margin-right: -40px;
+    margin-top: -40px;
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 40px;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+.clients__img {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+
+  @media screen and (max-width: $tablet) {
+    width: 250px;
+    height: 250px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 200px;
+    height: 200px;
+  }
+}
+.clients__text {
+  margin: 20px 0px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.14;
+  text-transform: capitalize;
+  text-align: center;
+}
+.clients__line {
+  display: block;
+  height: 250px;
+  border-right: 1px solid #000000;
+}
+.line--close {
+  @media screen and (max-width: $tablet-max) {
+    display: none;
+  }
+}
+
+.btn--margin {
+  @media screen and (max-width: $tablet) {
+    margin-top: 50px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-top: 80px;
+  }
+}
+
+.img--close {
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+}
+.img--close-tb {
+  @media screen and (max-width: $desktop) {
+    display: none;
+  }
+}

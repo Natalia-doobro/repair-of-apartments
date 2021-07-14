@@ -4,15 +4,22 @@
  */
 
 // Стили для файла с примером HTML-фрагмента
-/*@import './example';*/
+
+@import './utils/breakpoints';
+@import './utils/variables';
+@import './base/common';
 /*шапка*/
 
 /*главный контент страницы*/
 /*герой и заголовок*/
+@import './components/hero';
 /*блок портфолио*/
+@import './components/block-portfolio';
 /*блок наши клиенты*/
+@import './components/clients-block';
 /*блок услуг*/
 /*модальные окна на услуги*/
 /*блок контакты*/
+@import './components/contact';
 
 /*подвал*/

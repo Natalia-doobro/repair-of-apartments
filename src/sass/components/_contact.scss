@@ -1,0 +1,116 @@
+.contacts {
+  text-align: center;
+  @media screen and (max-width: $mobile-max) {
+    margin-top: 40px;
+    margin-bottom: 70px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-top: 170px;
+    margin-bottom: 120px;
+  }
+}
+.contacts__title {
+  @media screen and (max-width: $mobile-max) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 35px;
+  }
+}
+.address {
+  @media screen and (max-width: $mobile) {
+    font-size: 30px;
+    line-height: 1.12;
+  }
+  @media screen and (min-width: $mobile) and (max-width: $mobile-max) {
+    font-size: 36px;
+    line-height: 1.17;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 64px;
+  }
+}
+.address__line {
+  display: block;
+  margin: 40px auto;
+  border-bottom: 3px solid #870126;
+
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+  }
+  @media screen and (min-width: $mobile) and (max-width: $mobile-max) {
+    width: 400px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 700px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 900px;
+  }
+}
+.contact {
+  margin-bottom: 40px;
+  line-height: 1.16;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 18px;
+  }
+  @media screen and (min-width: $mobile) and (max-width: $mobile-max) {
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    font-size: 36px;
+  }
+}
+.social-icons {
+  display: inline-flex;
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-color: var(--dark-bg-color);
+  transition: background-color var(--animation-duration);
+
+  &:hover .icon,
+  &:focus .icon,
+  &:active .icon {
+    fill: var(--hover-color);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--active-color);
+  }
+
+  @media screen and (max-width: $mobile-max) {
+    width: 70px;
+    height: 70px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.icon {
+  fill: var(--icon-color);
+  transition: fill var(--animation-duration);
+
+  @media screen and (max-width: $mobile-max) {
+    width: 44px;
+    height: 44px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 60px;
+    height: 60px;
+  }
+}

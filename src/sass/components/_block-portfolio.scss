@@ -1,0 +1,75 @@
+.portfolio {
+  padding-bottom: 83px;
+}
+.title--color {
+  --title-color: var(--dark-bg-text-color);
+  -webkit-text-stroke: 1px black;
+  text-shadow: 0px 4px 4px #000000;
+}
+.gallery {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: $tablet) and (max-width: $desktop) {
+    margin-right: -30px;
+    margin-top: -30px;
+  }
+}
+.gallery__item {
+  @media screen and (max-width: $tablet) {
+    max-width: 450px;
+  }
+  @media screen and (min-width: $tablet) {
+    max-width: 370px;
+  }
+
+  &:not(:last-child) {
+    @media screen and (max-width: $desktop) {
+      margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 30px;
+    }
+    @media screen and (min-width: $tablet) {
+      margin-right: 14px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-right: 30px;
+    }
+  }
+}
+.hide--mobile {
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+}
+.hide--tablet {
+  @media screen and (min-width: $tablet) and (max-width: $tablet-max) {
+    display: none;
+  }
+}
+.button {
+  @media screen and (min-width: $desktop) {
+    display: flex;
+  }
+}
+.button__item {
+  width: 100%;
+
+  &:not(:last-child) {
+    @media screen and (min-width: $desktop) {
+      margin-right: 30px;
+    }
+  }
+}
+.btn-close {
+  @media screen and (max-width: $tablet-max) {
+    display: none;
+  }
+}

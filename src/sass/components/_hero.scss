@@ -1,0 +1,76 @@
+/*Шапка*/
+.hero {
+  background: var(--dark-bg-color);
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.hero-container {
+  @media screen and (max-width: $mobile-max) {
+    padding-top: 48px;
+    padding-bottom: 35px;
+  }
+  @media screen and (min-width: $mobile-max) {
+    padding-top: 0px;
+    padding-bottom: 73px;
+  }
+}
+.hero__logo {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+
+  @media screen and (max-width: $tablet) {
+    width: 150px;
+    height: 150px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 225px;
+    height: 225px;
+  }
+}
+.hero__title {
+  display: block;
+
+  width: 100%;
+  max-width: 952px;
+  margin-left: auto;
+  margin-right: auto;
+
+  color: var(--dark-bg-text-color);
+  text-shadow: 0px 6px 4px #000000;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 32px;
+    line-height: 1.17;
+  }
+  @media screen and (max-width: $tablet) {
+    font-size: 45px;
+    line-height: 1.17;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-top: 30px;
+    font-size: 72px;
+    line-height: 1.16;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 96px;
+    line-height: 1.16;
+  }
+}
+.hero__subtitle {
+  display: block;
+  @media screen and (max-width: $tablet) {
+    font-size: 30px;
+    line-height: 1.16;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 48px;
+    line-height: 1.16;
+  }
+}
