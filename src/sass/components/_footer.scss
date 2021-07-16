@@ -20,6 +20,13 @@
   font-weight: 700;
   line-height: 2;
   text-transform: uppercase;
+  transition: background-color var(--animation-duration);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--hover-color);
+  }
 
   @media screen and (max-width: $mobile-max) {
     font-size: 18px;
@@ -65,5 +72,14 @@
   }
   @media screen and (min-width: $desktop) {
     font-size: 36px;
+  }
+}
+.footer-contact__link {
+  transition: background-color var(--animation-duration);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--hover-color);
   }
 }
