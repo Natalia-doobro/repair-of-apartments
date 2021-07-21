@@ -8,6 +8,8 @@
 @import './utils/breakpoints';
 @import './utils/variables';
 @import './base/common';
+@import './components/fon';
+@import './components/fon-pages';
 /*шапка*/
 
 /*главный контент страницы*/
@@ -18,9 +20,15 @@
 /*блок наши клиенты*/
 @import './components/clients-block';
 /*блок услуг*/
+@import './components/serviece';
 /*модальные окна на услуги*/
 /*блок контакты*/
 @import './components/contact';
+
+/*блоки с фотографиями*/
+
+/*блоки коментареев*/
+@import './components/reviews';
 
 /*подвал*/
 @import './components/footer';

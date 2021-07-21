@@ -1,0 +1,33 @@
+.main-fon {
+  @media screen and (max-width: $mobile-max) {
+    width: 100%;
+    z-index: 1;
+    background-image: url('../images/fon/fon-mob.png');
+    background-size: 100% 350px;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../images/fon/fon-mob@2x.png');
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 100%;
+    z-index: 1;
+    background-image: url('../images/fon/fon-des.png');
+    background-size: 1600px 350px;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../images/fon/fon-des@2x.png');
+    }
+  }
+}
