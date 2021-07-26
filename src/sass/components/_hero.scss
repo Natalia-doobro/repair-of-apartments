@@ -73,3 +73,14 @@
     line-height: 1.16;
   }
 }
+
+.padding--hero {
+  @media screen and (max-width: $mobile-max) {
+    padding-top: 48px;
+    padding-bottom: 35px;
+  }
+  @media screen and (min-width: $mobile-max) {
+    padding-top: 0px;
+    padding-bottom: 73px;
+  }
+}
