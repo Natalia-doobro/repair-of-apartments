@@ -1,0 +1,65 @@
+/*бекдроп*/
+body.modal-open {
+  overflow: hidden;
+  overflow-y: none;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 8;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity var(--animation-duration);
+
+  @media screen and (max-width: $desktop) {
+    overflow-y: scroll;
+  }
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+/*модалка*/
+.is-hidden .modal {
+  opacity: 0;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  background-color: var(--body-color);
+
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: opacity var(--animation-duration);
+
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+    height: 900px;
+  }
+
+  @media screen and (min-width: $mobile) and (max-width: $mobile-max) {
+    width: 480px;
+    height: 900px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 700px;
+    height: 900px;
+  }
+}
+.button-close--position {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+
+  transform: translate(-50%, 0%);
+}
