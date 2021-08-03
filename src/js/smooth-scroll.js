@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function initMeny() {
   // Добавляет плавную прокрутку ко всем ссылкам
   $('a').on('click', function (event) {
     // Убедись в этом что .hash имеет значение перед переопределением поведения по умолчанию
@@ -23,4 +23,8 @@ $(document).ready(function () {
       );
     }
   });
+};
+
+$(document).on('ready', function () {
+    initMeny();
 });

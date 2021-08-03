@@ -1,4 +1,13 @@
 /* Главная */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 body {
   background: var(--body-color);
   font-family: 'Roboto', sans-serif;

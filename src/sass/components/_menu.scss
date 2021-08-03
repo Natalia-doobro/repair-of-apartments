@@ -75,12 +75,7 @@
     opacity: 0.7;
   }
 
-  @media screen and (min-width: $tablet) {
-    top: 25px;
-    right: 67px;
-  }
-
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $mobile-max) {
     display: none;
   }
 }

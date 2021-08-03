@@ -1,0 +1,231 @@
+.image__item {
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-auto-rows: 240px;
+  grid-gap: 12px;
+
+  list-style: none;
+
+  @media screen and (max-width: $mobile-max) {
+    padding-top: 30px;
+    &:last-child {
+      padding-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 40px;
+    &:last-child {
+      padding-bottom: 40px;
+    }
+  }
+}
+.image__subtitle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  line-height: 1.15;
+  text-align: center;
+
+  background-color: var(--dark-bg-color);
+  color: var(--dark-bg-text-color);
+
+  @media screen and (max-width: $mobile-max) {
+    width: 210px;
+    height: 25px;
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    -webkit-text-stroke: 1px #000000;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 570px;
+    height: 70px;
+    margin-bottom: 30px;
+
+    font-size: 60px;
+    -webkit-text-stroke: 3px #000000;
+  }
+}
+.photo {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 474px) {
+    justify-content: center;
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+  @media screen and (min-width: 475px) and (max-width: $mobile) {
+    margin-top: -15px;
+    margin-left: -15px;
+  }
+  @media screen and (min-width: $mobile) and (max-width: $mobile-max) {
+    margin-top: -15px;
+    margin-left: -15px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-top: -23px;
+    margin-left: -23px;
+  }
+}
+.photo__img {
+  object-fit: cover;
+  transition: transform var(--animation-duration) var(--timing-function);
+  @media screen and (max-width: 474px) {
+    width: 90px;
+    height: 60px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  @media screen and (min-width: 475px) and (max-width: $mobile) {
+    width: 100px;
+    height: 60px;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  @media screen and (min-width: $mobile) and (max-width: $mobile-max) {
+    width: 140px;
+    height: 80px;
+
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 230px;
+    height: 250px;
+
+    margin-top: 23px;
+    margin-left: 23px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 275px;
+    height: 310px;
+  }
+}
+.photo__img:hover {
+  transform: scale(1.03);
+}
+
+.photo__link {
+  display: block;
+  text-decoration: none;
+  height: 100%;
+}
+
+.photo__link:hover {
+  cursor: zoom-in;
+}
+
+/* Lightbox */
+.lightbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) var(--timing-function);
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.lightbox__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox__content {
+  padding: 0px 10px;
+  transform: scale(0.95);
+  transition: transform var(--animation-duration) var(--timing-function);
+
+  @media screen and (min-width: $mobile) {
+    max-width: 480px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: 1000px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 1200px;
+  }
+}
+
+.lightbox.is-open .lightbox__content {
+  transform: scale(1);
+}
+
+.lightbox__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox__button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color var(--animation-duration);
+  outline: none;
+  background-image: url('../images/icons.svg/icon-close.svg');
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+
+.lightbox__button:hover,
+.lightbox__button:focus {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.lightbox__btn {
+  position: absolute;
+
+  display: block;
+  width: 60px;
+  height: 100%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color var(--animation-duration);
+  outline: none;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+.btn-back {
+  top: 0px;
+  left: 0px;
+}
+.btn-next {
+  top: 0px;
+  right: 0px;
+}
