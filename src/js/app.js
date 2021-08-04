@@ -132,7 +132,7 @@ const imgSrc = galleryItems.map(elem => elem.original);
 const imgAlt = galleryItems.map(elem => elem.description);
 
 function onScrollingDack(evt) {
-  evt.preventDefault();//Отмена действий по умолчанию
+  //evt.preventDefault();//Отмена действий по умолчанию
   
   imgSrc.forEach(elem => {
       if (modalImage.src === elem) {
@@ -149,22 +149,23 @@ function onScrollingDack(evt) {
 };
 
 function onScrollingNext(evt) {
-   evt.preventDefault();//Отмена действий по умолчанию
-  
-    imgSrc.forEach(elem => {
-      if (modalImage.src === elem) {
-        let index = imgSrc.indexOf(elem);
-        index = index + 1;
-        console.log(index);
-        if (index !== 10) {
-          modalImage.src = imgSrc[index];
-          modalImage.alt = imgAlt[index];
-        } else {
-         onModalClose();
-        }
-        
+   //evt.preventDefault();//Отмена действий по умолчанию
+  const imgSrc = galleryItems.map(elem => elem.original).reverse();
+  const imgAlt = galleryItems.map(elem => elem.description).reverse();
+
+  imgSrc.forEach(elem => {
+    if (modalImage.src === elem) {
+      let index = imgSrc.indexOf(elem);
+      index = index - 1;
+      console.log(index);
+      if (index !== -1) {
+        modalImage.src = imgSrc[index];
+        modalImage.alt = imgAlt[index];
+      } else {
+        onModalClose();
       }
-    });
+    }
+  });
 };
 
 //-------------------------------------------------------------------------------------------------------------------------------------
