@@ -65,9 +65,14 @@ const galleryItems = [
 ];
 
 // добавляем разметку фото в галерею
-const listGallery = document.querySelector('.js-gallery'); //ссылка на <ul class="gallery js-gallery"></ul>
-const modal = document.querySelector('.lightbox'); //ссылка на <div class="lightbox js-lightbox">
-const modalImage = document.querySelector('.lightbox__image');//ссылка на <img class="lightbox__image" src="" alt="" />
+const listLivingRoom = document.querySelector('.js-living-room'); 
+const listKitchen = document.querySelector('.js-kitchen'); 
+const listBalcony = document.querySelector('.js-balcony'); 
+const listBathroom = document.querySelector('.js-bathroom'); 
+const listMounting = document.querySelector('.js-mounting'); 
+//-----------------------------------------------------------------------------------------------------------------------------------
+const modal = document.querySelector('.lightbox'); 
+const modalImage = document.querySelector('.lightbox__image');
 const modalBtn = document.querySelector('.lightbox__button');
 const modalOverlay = document.querySelector('.lightbox__overlay');
 const blockPhotoBtnDack = document.querySelector('.btn-back');
@@ -76,48 +81,46 @@ const blockPhotoImg = document.querySelector(".photo__img")
 
 
 const markup = (acc, { preview, original, description }) => acc + `<li class="photo__item"><a class="photo__link" href=${original}><img class="img photo__img" src=${preview} data-source=${original} alt=${description} width="250"></a></li>`;
-//калбек функцыя которая генерирует стрроку , и переносит значение елементов из galleryItems 
-const photo = galleryItems.reduce(markup, '');//переменая хранит полученую строку от  калбек функцыи
+const photo = galleryItems.reduce(markup, '');
 
-listGallery.insertAdjacentHTML('beforeend', photo);//добавляем с помощью шаблонной строки сгенерированую строку в переменной photo 
+listLivingRoom.insertAdjacentHTML('beforeend', photo);
+listKitchen.insertAdjacentHTML('beforeend', photo);
+listBalcony.insertAdjacentHTML('beforeend', photo);
+listBathroom.insertAdjacentHTML('beforeend', photo);
+listMounting.insertAdjacentHTML('beforeend', photo);
 
 //ДЕЛЕГИРОВАНИЕ
 
 function onModalOpen(evt) {
-  evt.preventDefault();//Отмена действий по умолчанию
-  if (evt.target.nodeName !== 'IMG') { //зашита от случайного нажатия
+  evt.preventDefault();
+  if (evt.target.nodeName !== 'IMG') { 
     return;
   }
   
   //РАБОТА С МОДАЛЬНЫМ ОКНОМ
-  modal.classList.add('is-open');//при клике добавляем класс is-open на див lightbox
-  modalImage.src = evt.target.dataset.source; //меняем значение атрибута на ту сылку фото на которое нажали
-  modalImage.alt = evt.target.alt; //меняем значение атрибута alt, на alt фото на которое нажали
-  window.addEventListener('keydown', onEscKeyClick);// слушатель отслеживает действия на клавиатуре
-
+  modal.classList.add('is-open');
+  modalImage.src = evt.target.dataset.source; 
+  modalImage.alt = evt.target.alt;
+  
   //------------------------------------------------------------------------------
-  modalBtn.addEventListener('click', onModalClose);//при клике на все кроме фото молдальное окно закроется
-  modalOverlay.addEventListener('click', onModalClose);//при клике на все кроме фото молдальное окно закроется
+  window.addEventListener('keydown', onEscKeyClick);
+  modalBtn.addEventListener('click', onModalClose);
+  modalOverlay.addEventListener('click', onModalClose);
 };
 
 function onModalClose(evt) {
-  // если без кнопки добавить слушателя на модальное окно и поставить зашиту
-  // if (evt.target.nodeName === 'IMG') { //зашита от случайного нажатия 
-  //   return;
-  // }
   
-  modal.classList.remove('is-open');//при клике удаляем класс is-open на диве lightbox
-  modalImage.src = '';//очисчаем значение атрибута
-  modalImage.alt = '';//очисчаем значение атрибута
-  window.removeEventListener('keydown', onEscKeyClick);// снимаем слушателя
+  modal.classList.remove('is-open');
+  modalImage.src = '';
+  modalImage.alt = '';
 
   //------------------------------------------------------------------------------
-  modalBtn.removeEventListener('click', onModalClose);//при клике на все кроме фото молдальное окно закроется
-  modalOverlay.removeEventListener('click', onModalClose);//при клике на все кроме фото молдальное окно закроется
+  window.removeEventListener('keydown', onEscKeyClick);
+  modalBtn.removeEventListener('click', onModalClose);
+  modalOverlay.removeEventListener('click', onModalClose);
  
 };
 
-//закрытие модального окна при нажатии клавиши Esc
 function onEscKeyClick(evt) {
   console.log(evt.code);
   if (evt.code !== "Escape") {
@@ -127,13 +130,9 @@ function onEscKeyClick(evt) {
 };
 
 //-------------------------------------------------------------------------------------------------------------------------------------
-// Перегортування зображень галереї у відкритому модальному вікні
-const imgSrc = galleryItems.map(elem => elem.original);
-const imgAlt = galleryItems.map(elem => elem.description);
-
 function onScrollingDack(evt) {
-  //evt.preventDefault();//Отмена действий по умолчанию
-  
+  const imgSrc = galleryItems.map(elem => elem.original);
+  const imgAlt = galleryItems.map(elem => elem.description);
   imgSrc.forEach(elem => {
       if (modalImage.src === elem) {
         let index = imgSrc.indexOf(elem);
@@ -149,7 +148,6 @@ function onScrollingDack(evt) {
 };
 
 function onScrollingNext(evt) {
-   //evt.preventDefault();//Отмена действий по умолчанию
   const imgSrc = galleryItems.map(elem => elem.original).reverse();
   const imgAlt = galleryItems.map(elem => elem.description).reverse();
 
@@ -170,6 +168,11 @@ function onScrollingNext(evt) {
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 
-listGallery.addEventListener('click', onModalOpen);//вешаем 1 слушателя не родителя елементов которые мы вызываем
 blockPhotoBtnDack.addEventListener('click', onScrollingDack);
 blockPhotoBtnNext.addEventListener('click', onScrollingNext);
+
+listLivingRoom.addEventListener('click', onModalOpen);
+listKitchen.addEventListener('click', onModalOpen);
+listBalcony.addEventListener('click', onModalOpen);
+listBathroom.addEventListener('click', onModalOpen);
+listMounting.addEventListener('click', onModalOpen);
