@@ -80,7 +80,8 @@
 
   border-radius: 50%;
   background-color: var(--dark-bg-color);
-  transition: background-color var(--animation-duration);
+
+  transition: background-color var(--animation-duration), transform 1500ms;
 
   &:hover .icon,
   &:focus .icon,
@@ -91,6 +92,7 @@
   &:focus,
   &:active {
     background-color: var(--active-color);
+    transform: scale(1.5);
   }
 
   @media screen and (max-width: $mobile-max) {
@@ -105,7 +107,7 @@
 
 .icon {
   fill: var(--icon-color);
-  transition: fill var(--animation-duration);
+  transition: fill var(--animation-duration), transform 1500ms;
 
   @media screen and (max-width: $mobile-max) {
     width: 44px;

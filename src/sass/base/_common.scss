@@ -92,13 +92,15 @@ body {
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
-  transition: background-color var(--animation-duration);
+
+  transition: background-color var(--animation-duration), transform 1500ms;
 
   &:hover,
   &:focus,
   &:active {
     --button-color: var(--active-button-color);
     --dark-bg-text-color: var(--hover-color);
+    transform: scale(1.5);
   }
 
   @media screen and (max-width: $mobile) {
