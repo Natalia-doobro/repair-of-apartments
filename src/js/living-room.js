@@ -1,26 +1,26 @@
-import markup from '../templates/gallery.hbs';;
-import galleryBalcony from './balcony.json';
+import markup from '../templates/gallery.hbs';
+import galleryRoom from './living-room.json';
 
 
 // добавляем разметку фото в галерею
-const listBalcony = document.querySelector('.js-balcony');  
-const modalBalcony = document.querySelector('.lightbox-balcony');
-const modalImage = document.querySelector('.image--balcony');
-const modalBtn = document.querySelector('.lightbox__button--balcony');
-const modalOverlay = document.querySelector('.lightbox__overlay--balcony');
-const blockPhotoBtnDack = document.querySelector('.btn-back--balcony');
-const blockPhotoBtnNext = document.querySelector('.btn-next--balcony');
+const listLivingRoom = document.querySelector('.js-living-room'); 
+const modalLivingRoom = document.querySelector('.lightbox-living-room');
+ 
+const modalImage = document.querySelector('.lightbox__image');
+const modalBtn = document.querySelector('.lightbox__button');
+const modalOverlay = document.querySelector('.lightbox__overlay');
+
+const blockPhotoBtnDack = document.querySelector('.btn-back');
+const blockPhotoBtnNext = document.querySelector('.btn-next');
+
 //-----------------------------------------------------------------------------------------------------------------------------------
 
-
 // //ШАБЛОНИЗАТОР
-
-const photoBalcony = galleryBalcony.map(markup).join('');
-listBalcony.insertAdjacentHTML('beforeend', photoBalcony);
+const photoRoom = galleryRoom.map(markup).join('');
+listLivingRoom.insertAdjacentHTML('beforeend', photoRoom);
 
 
 //ДЕЛЕГИРОВАНИЕ
-
 function onModalOpen(evt) {
   evt.preventDefault();
   if (evt.target.nodeName !== 'IMG') { 
@@ -28,12 +28,8 @@ function onModalOpen(evt) {
   }
 
   //РАБОТА С МОДАЛЬНЫМ ОКНОМ
-    modalBalcony.classList.add('is-open');
+    modalLivingRoom.classList.add('is-open');
     modalImage.src = evt.target.dataset.source;
-    console.log(evt.target);
-  
-  
- 
   //------------------------------------------------------------------------------
   window.addEventListener('keydown', onEscKeyClick);
   modalBtn.addEventListener('click', onModalClose);
@@ -42,7 +38,7 @@ function onModalOpen(evt) {
 
 function onModalClose(evt) {
 
-  modalBalcony.classList.remove('is-open');
+  modalLivingRoom.classList.remove('is-open');
   modalImage.src = ''; 
   //------------------------------------------------------------------------------
   window.removeEventListener('keydown', onEscKeyClick);
@@ -61,7 +57,8 @@ function onEscKeyClick(evt) {
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 function onScrollingDack(evt) {
-  const imgSrc = galleryBalcony.map(elem => elem.original);
+  console.log(evt.target);
+  const imgSrc = galleryRoom.map(elem => elem.original);
   
   imgSrc.forEach(elem => {
       if (modalImage.src === elem) {
@@ -77,13 +74,14 @@ function onScrollingDack(evt) {
 };
 
 function onScrollingNext(evt) {
-  const imgSrc = galleryBalcony.map(elem => elem.original).reverse();
+  const imgSrc = galleryRoom.map(elem => elem.original).reverse();
   
 
   imgSrc.forEach(elem => {
     if (modalImage.src === elem) {
       let index = imgSrc.indexOf(elem);
       index = index - 1;
+      console.log(index);
       if (index !== -1) {
         modalImage.src = imgSrc[index];
         
@@ -99,5 +97,4 @@ function onScrollingNext(evt) {
 blockPhotoBtnDack.addEventListener('click', onScrollingDack);
 blockPhotoBtnNext.addEventListener('click', onScrollingNext);
 
-
-listBalcony.addEventListener('click', onModalOpen);
+listLivingRoom.addEventListener('click', onModalOpen);

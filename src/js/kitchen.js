@@ -1,22 +1,22 @@
 import markup from '../templates/gallery.hbs';;
-import galleryBalcony from './balcony.json';
+import galleryKitchen from './kitchen.json';
 
 
 // добавляем разметку фото в галерею
-const listBalcony = document.querySelector('.js-balcony');  
-const modalBalcony = document.querySelector('.lightbox-balcony');
-const modalImage = document.querySelector('.image--balcony');
-const modalBtn = document.querySelector('.lightbox__button--balcony');
-const modalOverlay = document.querySelector('.lightbox__overlay--balcony');
-const blockPhotoBtnDack = document.querySelector('.btn-back--balcony');
-const blockPhotoBtnNext = document.querySelector('.btn-next--balcony');
+const listKitchen = document.querySelector('.js-kitchen'); 
+const modalKitchen = document.querySelector('.lightbox-kitchen');
+const modalImage = document.querySelector('.image--kitchen');
+const modalBtn = document.querySelector('.lightbox__button--kitchen');
+const modalOverlay = document.querySelector('.lightbox__overlay--kitchen');
+const blockPhotoBtnDack = document.querySelector('.btn-back--kitchen');
+const blockPhotoBtnNext = document.querySelector('.btn-next--kitchen');
 //-----------------------------------------------------------------------------------------------------------------------------------
 
 
 // //ШАБЛОНИЗАТОР
 
-const photoBalcony = galleryBalcony.map(markup).join('');
-listBalcony.insertAdjacentHTML('beforeend', photoBalcony);
+const photoKitchen = galleryKitchen.map(markup).join('');
+listKitchen.insertAdjacentHTML('beforeend', photoKitchen);
 
 
 //ДЕЛЕГИРОВАНИЕ
@@ -28,7 +28,7 @@ function onModalOpen(evt) {
   }
 
   //РАБОТА С МОДАЛЬНЫМ ОКНОМ
-    modalBalcony.classList.add('is-open');
+    modalKitchen.classList.add('is-open');
     modalImage.src = evt.target.dataset.source;
     console.log(evt.target);
   
@@ -42,7 +42,7 @@ function onModalOpen(evt) {
 
 function onModalClose(evt) {
 
-  modalBalcony.classList.remove('is-open');
+  modalKitchen.classList.remove('is-open');
   modalImage.src = ''; 
   //------------------------------------------------------------------------------
   window.removeEventListener('keydown', onEscKeyClick);
@@ -61,7 +61,7 @@ function onEscKeyClick(evt) {
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 function onScrollingDack(evt) {
-  const imgSrc = galleryBalcony.map(elem => elem.original);
+  const imgSrc = galleryKitchen.map(elem => elem.original);
   
   imgSrc.forEach(elem => {
       if (modalImage.src === elem) {
@@ -77,7 +77,7 @@ function onScrollingDack(evt) {
 };
 
 function onScrollingNext(evt) {
-  const imgSrc = galleryBalcony.map(elem => elem.original).reverse();
+  const imgSrc = galleryKitchen.map(elem => elem.original).reverse();
   
 
   imgSrc.forEach(elem => {
@@ -100,4 +100,4 @@ blockPhotoBtnDack.addEventListener('click', onScrollingDack);
 blockPhotoBtnNext.addEventListener('click', onScrollingNext);
 
 
-listBalcony.addEventListener('click', onModalOpen);
+listKitchen.addEventListener('click', onModalOpen);

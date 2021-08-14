@@ -1,22 +1,22 @@
 import markup from '../templates/gallery.hbs';;
-import galleryBalcony from './balcony.json';
+import galleryBathroom from './bathroom.json';
 
 
 // добавляем разметку фото в галерею
-const listBalcony = document.querySelector('.js-balcony');  
-const modalBalcony = document.querySelector('.lightbox-balcony');
-const modalImage = document.querySelector('.image--balcony');
-const modalBtn = document.querySelector('.lightbox__button--balcony');
-const modalOverlay = document.querySelector('.lightbox__overlay--balcony');
-const blockPhotoBtnDack = document.querySelector('.btn-back--balcony');
-const blockPhotoBtnNext = document.querySelector('.btn-next--balcony');
+const listBathroom = document.querySelector('.js-bathroom'); 
+const modalBathroom = document.querySelector('.lightbox-bathroom');
+const modalImage = document.querySelector('.image--bathroom');
+const modalBtn = document.querySelector('.lightbox__button--bathroom');
+const modalOverlay = document.querySelector('.lightbox__overlay--bathroom');
+const blockPhotoBtnDack = document.querySelector('.btn-back--bathroom');
+const blockPhotoBtnNext = document.querySelector('.btn-next--bathroom');
 //-----------------------------------------------------------------------------------------------------------------------------------
 
 
 // //ШАБЛОНИЗАТОР
 
-const photoBalcony = galleryBalcony.map(markup).join('');
-listBalcony.insertAdjacentHTML('beforeend', photoBalcony);
+const photoBathroom = galleryBathroom.map(markup).join('');
+listBathroom.insertAdjacentHTML('beforeend', photoBathroom);
 
 
 //ДЕЛЕГИРОВАНИЕ
@@ -28,7 +28,7 @@ function onModalOpen(evt) {
   }
 
   //РАБОТА С МОДАЛЬНЫМ ОКНОМ
-    modalBalcony.classList.add('is-open');
+    modalBathroom.classList.add('is-open');
     modalImage.src = evt.target.dataset.source;
     console.log(evt.target);
   
@@ -42,7 +42,7 @@ function onModalOpen(evt) {
 
 function onModalClose(evt) {
 
-  modalBalcony.classList.remove('is-open');
+  modalBathroom.classList.remove('is-open');
   modalImage.src = ''; 
   //------------------------------------------------------------------------------
   window.removeEventListener('keydown', onEscKeyClick);
@@ -61,7 +61,7 @@ function onEscKeyClick(evt) {
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 function onScrollingDack(evt) {
-  const imgSrc = galleryBalcony.map(elem => elem.original);
+  const imgSrc = galleryBathroom.map(elem => elem.original);
   
   imgSrc.forEach(elem => {
       if (modalImage.src === elem) {
@@ -77,7 +77,7 @@ function onScrollingDack(evt) {
 };
 
 function onScrollingNext(evt) {
-  const imgSrc = galleryBalcony.map(elem => elem.original).reverse();
+  const imgSrc = galleryBathroom.map(elem => elem.original).reverse();
   
 
   imgSrc.forEach(elem => {
@@ -100,4 +100,4 @@ blockPhotoBtnDack.addEventListener('click', onScrollingDack);
 blockPhotoBtnNext.addEventListener('click', onScrollingNext);
 
 
-listBalcony.addEventListener('click', onModalOpen);
+listBathroom.addEventListener('click', onModalOpen);
