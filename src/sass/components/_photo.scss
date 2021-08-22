@@ -6,6 +6,8 @@
   list-style: none;
 
   @media screen and (max-width: $mobile-max) {
+    height: 700px;
+    overflow: hidden;
     padding-top: 30px;
     &:last-child {
       padding-bottom: 30px;
@@ -13,6 +15,9 @@
   }
 
   @media screen and (min-width: $tablet) {
+    height: 1450px;
+    overflow: hidden;
+
     padding-top: 40px;
     &:last-child {
       padding-bottom: 40px;
