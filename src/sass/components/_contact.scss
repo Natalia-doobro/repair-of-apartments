@@ -84,13 +84,11 @@
   transition: background-color var(--animation-duration), transform 1500ms;
 
   &:hover .icon,
-  &:focus .icon,
-  &:active .icon {
+  &:focus .icon {
     fill: var(--hover-color);
   }
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
     background-color: var(--active-color);
     transform: scale(1.5);
   }
