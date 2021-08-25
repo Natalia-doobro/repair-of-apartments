@@ -221,9 +221,11 @@
   transition: background-color var(--animation-duration);
   outline: none;
 
-  &:hover,
-  &:focus {
-    background-color: rgba(0, 0, 0, 0.5);
+  @media screen and (min-width: $desktop) {
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
   }
 }
 .btn-back {
