@@ -1,6 +1,6 @@
 function initMeny() {
   // Добавляет плавную прокрутку ко всем ссылкам
-  $('a').on('click', function (event) {
+  $('a').addEventListener('click', function (event) {
     // Убедись в этом что .hash имеет значение перед переопределением поведения по умолчанию
     if (this.hash !== '') {
       // Запретить поведение щелчка якоря по умолчанию
@@ -25,6 +25,6 @@ function initMeny() {
   });
 };
 
-$(document).on('ready', function () {
+document.addEventListener('ready', function () {
     initMeny();
 });
