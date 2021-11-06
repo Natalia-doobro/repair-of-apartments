@@ -132,22 +132,22 @@
     color: var(--dark-bg-text-color);
 
     @media screen and (max-width: $mobile-max) {
-      border-radius: 10% 0% 10% 10%;
+      border-radius: 10px 0px 10px 10px;
     }
     @media screen and (min-width: $tablet) {
-      border-radius: 30% 0% 30% 30%;
+      border-radius: 50px 0px 50px 50px;
     }
   }
   &:nth-child(2n) {
     background-color: var(--dark-bag-color);
     @media screen and (max-width: $mobile) {
-      border-radius: 0% 10% 10% 10%;
+      border-radius: 0px 10px 10px 10px;
     }
     @media screen and (min-width: $mobile) and (max-width: $mobile-max) {
-      border-radius: 0% 20% 20% 20%;
+      border-radius: 0px 30px 30px 30px;
     }
     @media screen and (min-width: $tablet) {
-      border-radius: 0% 30% 30% 30%;
+      border-radius: 0px 50px 50px 50px;
     }
   }
 }
