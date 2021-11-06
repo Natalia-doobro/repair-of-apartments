@@ -48,7 +48,6 @@ function onModalClose(evt) {
 };
 
 function onEscKeyClick(evt) {
-  console.log(evt.code);
   if (evt.code !== "Escape") {
     return;
   };
@@ -57,7 +56,6 @@ function onEscKeyClick(evt) {
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 function onScrollingDack(evt) {
-  console.log(evt.target);
   const imgSrc = galleryRoom.map(elem => elem.original);
   
   imgSrc.forEach(elem => {

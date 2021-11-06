@@ -30,9 +30,6 @@ function onModalOpen(evt) {
   //РАБОТА С МОДАЛЬНЫМ ОКНОМ
     modalMounting.classList.add('is-open');
     modalImage.src = evt.target.dataset.source;
-    console.log(evt.target);
-  
-  
  
   //------------------------------------------------------------------------------
   window.addEventListener('keydown', onEscKeyClick);
@@ -52,7 +49,7 @@ function onModalClose(evt) {
 };
 
 function onEscKeyClick(evt) {
-  console.log(evt.code);
+  
   if (evt.code !== "Escape") {
     return;
   };
